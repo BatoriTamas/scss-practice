@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: aqua;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 80px;
+
+  padding: 0 20px;
+
+  border-bottom: 2px solid black;
+  
+  background-color: bisque;
+
+  .logo {
+    width: 100px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid black;
+  }
+
+  .hamburger-menu {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    span {
+      display: block;
+      position: relative;
+
+      width: 100%;
+      height: 12px;
+      background-color: black;
+      border-radius: 6px; // Ha itt megadok egy irreálisan nagy számot, mert nem tudom a valós értéket, akkor megcsinálja
+
+      transition: all 0.3s ease;
+
+      &::before,
+      &::after {
+        content: "";
+        
+        display: block;
+        position: absolute;
+        
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        border-radius: 6px;
+
+        transition: all 0.3s ease;
+      }
+      
+      &::before {
+        top: -24px;
+      }
+
+      &::after {
+        bottom: -24px;
+      }
+
+    }
+// Átalakítás X-re
+    &.open {
+      span {
+        background-color: transparent;
+        
+        &::before {
+          top: 0;
+          rotate: 45deg;
+        }
+        
+        &::after {
+          bottom: 0;
+          rotate: -45deg;
+        }
+      }
+    }
+  }
+}

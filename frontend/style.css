@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: aqua;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  padding: 0 20px;
+  border-bottom: 2px solid black;
+  background-color: bisque;
+}
+header .logo {
+  width: 100px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+header .hamburger-menu {
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .hamburger-menu span {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 12px;
+  background-color: black;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+header .hamburger-menu span::before, header .hamburger-menu span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+header .hamburger-menu span::before {
+  top: -24px;
+}
+header .hamburger-menu span::after {
+  bottom: -24px;
+}
+header .hamburger-menu.open span {
+  background-color: transparent;
+}
+header .hamburger-menu.open span::before {
+  top: 0;
+  rotate: 45deg;
+}
+header .hamburger-menu.open span::after {
+  bottom: 0;
+  rotate: -45deg;
+}/*# sourceMappingURL=style.css.map */
